@@ -1,9 +1,11 @@
 # gfs
 A Generic File System library for C++.  
 
-Created out of my own need for easy access to the filesystem without plaguing code with other responsibilities with macros and such for each OS.
+Created out of my own need for easy access to the filesystem without plaguing code with macros and such for each OS.
 
-This is the result.
+# Requirements
+* C++11 compatible compiler.
+* A not-broken OS
 
 # Concepts
 A 'Path' class is what this lib centers around. A 'Path' represents a file system entity. File, directory, link, etc. (Other file system entities (sockets, pipes, blocks, etc) are recognized, but essentially nothing is done with them, at the moment)
@@ -30,4 +32,4 @@ Current listing:
 # Progress
 Linux implementation is done. 
 Windows has... started.
-OSX is non-existent, as I have no OSX machine to test on. Will try to get it done though.
+OSX is non-existent, as I have no OSX machine to test on. Will try to get it done regardless though.
