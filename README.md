@@ -30,6 +30,6 @@ Current listing:
 * move: Accepts two Paths, a source, and a destination, and if the source exists, and the destination doesn't, moves the source to the destination.
 
 # Progress
-Linux implementation is done. 
-Windows has... started.
-OSX is non-existent, as I have no OSX machine to test on. Will try to get it done regardless though.
+* Linux implementation is done. 
+* Windows has... started.
+* OSX is non-existent, as I have no OSX machine to test on. Will try to get it done regardless though.
