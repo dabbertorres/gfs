@@ -31,5 +31,5 @@ Current listing:
 
 # Progress
 * Linux implementation is done. 
-* Windows has... started.
+* Windows implementation is pretty much done. Needs some tweaking (not liking symlinks at the moment).
 * OSX is non-existent, as I have no OSX machine to test on. Will try to get it done regardless though.
