@@ -5,10 +5,13 @@
 
 int main(int argc, char** argv)
 {
+#ifdef __linux__
 	gfs::Path file("~/Code/GenFS/GenFS.txt");
-	
+#elif defined _WIN32
+	gfs::Path file("G:/Code/bzHGTeditor/README.md");
+#endif
+
 	std::cout << std::boolalpha;
-	
 	std::cout << "file exists: " << file.exists() << '\n';
 	std::cout << "filename: " << file.filename() << '\n';
 	std::cout << "file name: " << file.name() << '\n';
@@ -50,12 +53,13 @@ int main(int argc, char** argv)
 	std::cout << "pwd: " << gfs::workingDir() << '\n';
 	std::cout << "self path: " << gfs::selfPath() << '\n';
 	
-	gfs::Path sym("./link");
+	gfs::Path sym("C:/Users/Alec/Desktop/Atom.lnk");
 	
 	std::cout << "sym: " << sym << '\n';
 	std::cout << "sym exists: " << sym.exists() << '\n';
 	std::cout << "sym ext: " << sym.extension() << '\n';
 	std::cout << "sym parent: " << sym.parent() << '\n';
+	std::cout << "sym target: " << gfs::readSymlink(sym) << '\n';
 	
 	std::cout << "sym type: ";
 	switch(sym.type())

@@ -46,7 +46,7 @@ namespace gfs
 			return {};
 	}
 	
-	unsigned long int Path::fileSize() const
+	unsigned long long int Path::fileSize() const
 	{
 		struct stat st;
 		
@@ -60,7 +60,7 @@ namespace gfs
 	{
 		struct stat st;
 		
-		if(!lstat(path.pathStr.c_str(), &st))
+		if(!lstat(path, &st))
 		{
 			switch(st.st_mode & S_IFMT)
 			{
@@ -89,8 +89,9 @@ namespace gfs
 					path.typeVal = Type::Unknown;
 					break;
 			}
-			
-			path.permissionsVal += st.st_mode & (S_IRWXU | S_IRWXG | S_IRWXO);
+
+			if(!path.permissionsVal)
+				path.permissionsVal += st.st_mode & (S_IRWXU | S_IRWXG | S_IRWXO);
 			
 			if(path.typeVal != Type::SymLink || resolveSymLink)
 			{

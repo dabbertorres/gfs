@@ -160,11 +160,6 @@ namespace gfs
 		
 		return "";
 	}
-	
-	Path::operator std::string() const
-	{
-		return pathStr;
-	}
 
 	Path::operator const char*() const
 	{
