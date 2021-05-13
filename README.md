@@ -3,11 +3,13 @@ A Generic File System library for C++.
 
 Created out of my own need for easy access to the filesystem without plaguing code with macros and such for each OS.
 
-# Requirements
+## Archiving in favor of the standard [Filesystem library](https://en.cppreference.com/w/cpp/filesystem).
+
+## Requirements
 * C++11 compatible compiler.
 * A not-broken OS
 
-# Concepts
+## Concepts
 A 'Path' class is what this lib centers around. A 'Path' represents a file system entity. File, directory, link, etc. (Other file system entities (sockets, pipes, blocks, etc) are recognized, but essentially nothing is done with them, at the moment)
 
 A Path object can be created by giving it a string, anything really. If the OS can recognize it as a path, it will attempt to use it as a path. If it is valid, it can be used.
@@ -29,7 +31,7 @@ Current listing:
 * remove: Accepts a Path, and if it exists, removes it.
 * move: Accepts two Paths, a source, and a destination, and if the source exists, and the destination doesn't, moves the source to the destination.
 
-# Progress
+## Progress
 * Linux implementation is done. 
 * Windows implementation is pretty much done. Needs some tweaking (not liking symlinks at the moment).
 * OSX is non-existent, as I have no OSX machine to test on. Will try to get it done regardless though.
